@@ -1,0 +1,77 @@
+/* 경로 선택 화면 스타일 */
+.route-selection {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.route-selection h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.route-selection h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.route-selection select {
+  padding: 10px;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.route-selection select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.route-selection ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.route-selection ul li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.route-selection ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .route-selection {
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  .route-selection h2 {
+    font-size: 20px;
+  }
+
+  .route-selection h3 {
+    font-size: 16px;
+  }
+
+  .route-selection select {
+    max-width: 100%;
+  }
+}

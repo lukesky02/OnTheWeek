@@ -1,0 +1,9 @@
+/* 헤더 스타일 */
+header {
+  background-color: #e1e9e0; /* 다크 블루 */
+  color: #0a0a0a;
+  padding: 15px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}

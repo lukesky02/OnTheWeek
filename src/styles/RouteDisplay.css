@@ -1,0 +1,78 @@
+.route-view {
+  margin: 20px;
+  position: relative; /* 재시도 버튼과 확인 버튼을 절대 위치로 배치하려면 부모 요소에 relative가 필요 */
+}
+
+.back-button {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.selected-categories {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.route-list {
+  margin-bottom: 40px; /* 재시도 버튼과 겹치지 않도록 여유 공간 추가 */
+}
+
+.route-item {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.route-checkbox {
+  margin-right: 10px;
+}
+
+.route-arrow {
+  margin-left: 10px; /* 화살표와 장소 간 간격 */
+}
+
+.route-place {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.retry-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.retry-button:hover {
+  background-color: #45a049;
+}
+
+.confirm-button {
+  position: absolute;
+  bottom: 20px;
+  left: 120px; /* 재시도 버튼 옆에 위치하도록 설정 */
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #0056b3;
+}

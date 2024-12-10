@@ -1,0 +1,10 @@
+/* 전반적인 스타일 초기화 및 폰트 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}

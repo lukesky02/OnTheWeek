@@ -1,0 +1,143 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  width: 100vw; 
+  height: 100vh;
+  display: block;
+}
+
+.container {
+  width: 100%; 
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.back-button {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.selected-categories {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.route-list {
+  margin-top: 20px;
+}
+
+.route-checkbox {
+  margin-right: 10px;
+}
+
+.route-place {
+  font-size: 16px;
+  padding: 5px;
+}
+
+.retry-button {
+  margin-top: 10px;
+  float: right;
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.retry-button:hover {
+  background-color: #45a049;
+}
+
+/* 버튼 스타일 */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* 선택된 상태에서 색상 변경 */
+button.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.route-view {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* 추가적인 패딩 */
+}
+
+.route-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* 버튼 정렬 */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .category-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .category-item {
+    width: 90%; /* 좀 더 넓게 */
+    max-width: 350px; /* 최대 너비를 늘림 */
+  }
+
+  .route-item {
+    width: 90%; /* 좀 더 넓게 */
+    max-width: 350px; /* 최대 너비를 늘림 */
+  }
+
+  .container {
+    padding: 20px; /* 더 많은 여백 */
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+}
