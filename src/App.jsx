@@ -9,7 +9,7 @@ import './styles/App.css';
 
 function App() {
   const [categories, setCategories] = useState([]);
-  const [keywords, setKeywords] = useState([]);
+  const [keywords, setKeywords] = useState({}); // 키워드를 객체로 관리
   const [type, setType] = useState('random');
   const [routes, setRoutes] = useState([]);
   const [selectedRoute, setSelectedRoute] = useState(null);
@@ -52,9 +52,11 @@ function App() {
     });
   };
 
-  const handleKeywordChange = (event) => {
-    const value = event.target.value;
-    setKeywords(value ? value.split(',').map((keyword) => keyword.trim()) : []);
+  const handleKeywordChange = (category, value) => {
+    setKeywords((prevKeywords) => ({
+      ...prevKeywords,
+      [category]: value.trim(),
+    }));
   };
 
   const handleTypeChange = (event) => {
@@ -69,15 +71,15 @@ function App() {
 
     setLoading(true);
 
-    const finalKeywords = Array.isArray(keywords) ? keywords : [];
+    const finalKeywords = Object.values(keywords).filter(Boolean); // 빈 값 제외
 
     try {
       const fetchedRoutes = await fetchRoutes(
         categories,
         finalKeywords,
         type,
-        userLocation.latitude, // 현재 위치 위도
-        userLocation.longitude // 현재 위치 경도
+        userLocation.latitude,
+        userLocation.longitude
       );
       setRoutes(fetchedRoutes);
       setIsRouteView(true);
@@ -102,6 +104,11 @@ function App() {
     setIsNavigationView(true);
   };
 
+  // 재시도 버튼을 눌렀을 때 동선을 다시 가져오는 함수
+  const handleRetry = () => {
+    handleFetchRoutes(); // 동선을 다시 불러오는 함수 호출
+  };
+
   return (
     <div className="App">
       <Header />
@@ -110,7 +117,7 @@ function App() {
           <CategorySelection
             categories={categories}
             onCategoryChange={handleCategoryChange}
-            onKeywordChange={handleKeywordChange}
+            onKeywordChange={handleKeywordChange} // 카테고리별 키워드 변경
           />
           <RouteSelection
             categories={categories}
@@ -129,6 +136,7 @@ function App() {
           selectedRoute={selectedRoute}
           onBack={handleBackToMain}
           onNavigate={handleNavigate}
+          onRetry={handleRetry} // 재시도 기능 연결
         />
       ) : (
         <NavigationDisplay selectedRoute={routes[selectedRoute]} />

@@ -1,4 +1,3 @@
-// RouteSelection.js
 import React from 'react';
 import '../styles/RouteSelection.css';
 
@@ -24,8 +23,11 @@ const RouteSelection = ({ categories, keywords, type, onTypeChange }) => {
       <div>
         <h3>입력된 키워드</h3>
         <ul>
-          {keywords.map((keyword, index) => (
-            <li key={index}>{keyword}</li>
+          {Object.entries(keywords).map(([category, keyword]) => (
+            <li key={category}>
+              {category}:{' '}
+              {Array.isArray(keyword) ? keyword.join(', ') : keyword}
+            </li>
           ))}
         </ul>
       </div>

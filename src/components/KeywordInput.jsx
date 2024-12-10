@@ -12,7 +12,14 @@ const KeywordInput = ({ categories, onSubmitKeywords }) => {
   }, [categories]);
 
   const handleKeywordChange = (category, value) => {
-    setKeywords((prev) => ({ ...prev, [category]: value }));
+    setKeywords((prev) => {
+      if (prev[category] !== undefined) {
+        return { ...prev, [category]: value };
+      } else {
+        console.error(`No category found for ${category}`);
+        return prev;
+      }
+    });
   };
 
   const handleSubmit = () => {
@@ -27,7 +34,7 @@ const KeywordInput = ({ categories, onSubmitKeywords }) => {
           <label>{category} 키워드:</label>
           <input
             type="text"
-            value={keywords[category]}
+            value={keywords[category] || ''} // 기본값이 빈 문자열로 처리되도록 수정
             onChange={(e) => handleKeywordChange(category, e.target.value)}
           />
         </div>

@@ -8,7 +8,7 @@ const fetchRoutes = async (categories, keywords, type, latitude, longitude) => {
       type: type,
       latitude: latitude, // GPS 위도
       longitude: longitude, // GPS 경도
-      radius: 1000,
+      radius: 3000,
     };
 
     console.log('Request Body:', JSON.stringify(requestBody, null, 2));
